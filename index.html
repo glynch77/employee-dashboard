@@ -16,74 +16,67 @@
   </head>
   <body>
     <!-- Navbar -->
-    <nav class="navbar bg-body-tertiary">
+    <nav class="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
       <div class="container">
         <a class="navbar-brand" href="#">
           <img
-            src="/docs/5.3/assets/brand/bootstrap-logo.svg"
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5hP_7PoIn9FJolrzX1Uw_IigaqYCrq6QD08LV7hVplw&s=10"
             alt="Bootstrap"
             width="30"
             height="24"
           />
         </a>
       </div>
+      <button
+        type="button"
+        class="btn btn-primary"
+        data-bs-toggle="modal"
+        data-bs-target="#addEmployeeModal"
+      >
+        Add Employee
+      </button>
     </nav>
 
-    <!-- Employee Table -->
-
-    <div class="container mt-5">
-      <div class="row">
-        <div class="col">
-          <div class="card">
-            <div class="card-header text-center">
-              <h2>Employee Profile</h2>
-            </div>
-            <div class="card-body">
-              <div class="row align-items-center mb-4">
-            <!-- Image Column -->
-            <div class="col-auto">
-              <img
-                src="https://cdn-icons-png.flaticon.com/512/4974/4974985.png"
-                class="rounded-circle d-block"
-                alt="Employee Avatar"
-                height="100"
-                width="100"
-              />
-            </div>
-            <!-- Position & ID Input Column -->
-            <div class="col">
-              <div class="row g-2">
-                <div class="col-md-6">
-                  <label for="inputPosition" class="form-label">Employee Position</label>
-                  <input type="text" class="form-control" id="inputPosition" placeholder="e.g. Software Engineer" />
-                </div>
-                <div class="col-md-6">
-                  <label for="inputId" class="form-label">Employee ID</label>
-                  <input type="text" class="form-control" id="inputId" placeholder="e.g. EMP-12345" />
-                </div>
-              </div>
-            </div>
+    <!-- Add Employee Modal -->
+    <div class="modal fade" id="addEmployeeModal" tabindex="-1">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Add Employee</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+            ></button>
           </div>
-
-              <!-- Form Details -->
-              <form class="row g-3 mt-5">
-                <div class="col-md-4">
-                  <label for="inputFirstName4" class="form-label">First Name</label>
-                  <input type="text" class="form-control" id="inputFirstName4" />
-                </div>
-                <div class="col-md-4">
-                  <label for="inputLastName4" class="form-label">Last Name</label>
-                  <input type="text" class="form-control" id="inputLastName4" />
-                </div>
-                <div class="col-md-4">
-                  <label for="inputEmail4" class="form-label"
-                    >Email</label
+          <div class="modal-body">
+            <form id="addEmployeeForm">
+              <div class="row g-3 mt-5">
+                <div class="col-md-6">
+                  <label for="inputFirstName6" class="form-label"
+                    >First Name</label
                   >
                   <input
-                    type="email"
+                    type="text"
                     class="form-control"
-                    id="inputEmail4"
+                    id="inputFirstName6"
                   />
+                </div>
+                <div class="col-md-6">
+                  <label for="inputLastName6" class="form-label"
+                    >Last Name</label
+                  >
+                  <input type="text" class="form-control" id="inputLastName6" />
+                </div>
+                <div class="col-md-6">
+                  <label for="inputPosition6" class="form-label"
+                    >Position</label
+                  >
+                  <input type="text" class="form-control" id="inputPosition6" />
+                </div>
+                <div class="col-md-6">
+                  <label for="inputEmail6" class="form-label">Email</label>
+                  <input type="email" class="form-control" id="inputEmail6" />
                 </div>
                 <div class="col-12">
                   <label for="inputAddress" class="form-label">Address</label>
@@ -120,7 +113,135 @@
                   <label for="inputZip" class="form-label">Zip</label>
                   <input type="text" class="form-control" id="inputZip" />
                 </div>
-                
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="submit"
+              form="addEmployeeForm"
+              class="btn btn-primary"
+            >
+              Add
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Employee Table -->
+
+    <div class="container mt-5">
+      <div class="row">
+        <div class="col">
+          <div class="card">
+            <div class="card-header text-center">
+              <h2>Employee Profile</h2>
+            </div>
+            <div class="card-body">
+              <div class="row align-items-center mb-4">
+                <!-- Image Column -->
+                <div class="col-auto">
+                  <img
+                    src="https://cdn-icons-png.flaticon.com/512/4974/4974985.png"
+                    class="rounded-circle d-block"
+                    alt="Employee Avatar"
+                    height="100"
+                    width="100"
+                  />
+                </div>
+                <!-- Position & ID Input Column -->
+                <div class="col">
+                  <div class="row g-2">
+                    <div class="col-md-6">
+                      <label for="inputPosition" class="form-label"
+                        >Employee Position</label
+                      >
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="inputPosition"
+                        placeholder="e.g. Software Engineer"
+                      />
+                    </div>
+                    <div class="col-md-6">
+                      <label for="inputId" class="form-label"
+                        >Employee ID</label
+                      >
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="inputId"
+                        placeholder="e.g. EMP-12345"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Form Details -->
+              <form class="row g-3 mt-5">
+                <div class="col-md-4">
+                  <label for="inputFirstName4" class="form-label"
+                    >First Name</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="inputFirstName4"
+                  />
+                </div>
+                <div class="col-md-4">
+                  <label for="inputLastName4" class="form-label"
+                    >Last Name</label
+                  >
+                  <input type="text" class="form-control" id="inputLastName4" />
+                </div>
+                <div class="col-md-4">
+                  <label for="inputEmail4" class="form-label">Email</label>
+                  <input type="email" class="form-control" id="inputEmail4" />
+                </div>
+                <div class="col-12">
+                  <label for="inputAddress" class="form-label">Address</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="inputAddress"
+                    placeholder="1234 Main St"
+                  />
+                </div>
+                <div class="col-12">
+                  <label for="inputAddress2" class="form-label"
+                    >Address 2</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="inputAddress2"
+                    placeholder="Apartment, studio, or floor"
+                  />
+                </div>
+                <div class="col-md-6">
+                  <label for="inputCity" class="form-label">City</label>
+                  <input type="text" class="form-control" id="inputCity" />
+                </div>
+                <div class="col-md-4">
+                  <label for="inputState" class="form-label">State</label>
+                  <select id="inputState" class="form-select">
+                    <option selected>Choose...</option>
+                    <option>...</option>
+                  </select>
+                </div>
+                <div class="col-md-2">
+                  <label for="inputZip" class="form-label">Zip</label>
+                  <input type="text" class="form-control" id="inputZip" />
+                </div>
+                <div class="row">
+                  <div class="col-md-12 text-center mt-4">
+                    <button type="submit" class="btn btn-primary">Edit</button>
+                    <button type="submit" class="btn btn-danger">Delete</button>
+                  </div>
+                </div>
               </form>
             </div>
           </div>
