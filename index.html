@@ -180,7 +180,7 @@
               </div>
 
               <!-- Form Details -->
-              <form class="row g-3 mt-5">
+              <form id="employeeForm"class="row g-3 mt-5">
                 <div class="col-md-4">
                   <label for="inputFirstName4" class="form-label"
                     >First Name</label
@@ -189,17 +189,18 @@
                     type="text"
                     class="form-control"
                     id="inputFirstName4"
+                    disabled
                   />
                 </div>
                 <div class="col-md-4">
                   <label for="inputLastName4" class="form-label"
                     >Last Name</label
                   >
-                  <input type="text" class="form-control" id="inputLastName4" />
+                  <input type="text" class="form-control" id="inputLastName4" disabled />
                 </div>
                 <div class="col-md-4">
                   <label for="inputEmail4" class="form-label">Email</label>
-                  <input type="email" class="form-control" id="inputEmail4" />
+                  <input type="email" class="form-control" id="inputEmail4" disabled/>
                 </div>
                 <div class="col-12">
                   <label for="inputAddress" class="form-label">Address</label>
@@ -207,7 +208,9 @@
                     type="text"
                     class="form-control"
                     id="inputAddress"
+                    disabled
                     placeholder="1234 Main St"
+                    
                   />
                 </div>
                 <div class="col-12">
@@ -218,6 +221,7 @@
                     type="text"
                     class="form-control"
                     id="inputAddress2"
+                    disabled
                     placeholder="Apartment, studio, or floor"
                   />
                 </div>
@@ -227,19 +231,19 @@
                 </div>
                 <div class="col-md-4">
                   <label for="inputState" class="form-label">State</label>
-                  <select id="inputState" class="form-select">
+                  <select id="inputState" disabled class="form-select">
                     <option selected>Choose...</option>
                     <option>...</option>
                   </select>
                 </div>
                 <div class="col-md-2">
                   <label for="inputZip" class="form-label">Zip</label>
-                  <input type="text" class="form-control" id="inputZip" />
+                  <input type="text" class="form-control" id="inputZip" disabled />
                 </div>
                 <div class="row">
                   <div class="col-md-12 text-center mt-4">
-                    <button type="submit" class="btn btn-primary">Edit</button>
-                    <button type="submit" class="btn btn-danger">Delete</button>
+                    <button id="editButton" type="submit" class="btn btn-primary">Edit</button>
+                    <button id="deleteButton" type="submit" class="btn btn-danger">Delete</button>
                   </div>
                 </div>
               </form>
