@@ -55,7 +55,8 @@ addEmployeeButton.addEventListener("click", function (event) {
 
 const editButton = document.getElementById("editButton");
 
-editButton.addEventListener("click", function () {
+editButton.addEventListener("click", function (event) {
+    event.preventDefault();
   const employeeForm = document.getElementById("employeeForm");
   const inputFields = employeeForm.querySelectorAll("input.form-control, select.form-select");
 
