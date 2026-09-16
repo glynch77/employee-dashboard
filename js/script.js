@@ -1,3 +1,5 @@
+
+
 // 6 questions to ask before coding a new feature
 // 1. What data do we need?
 // 2. Whre does the data  go?
@@ -48,4 +50,26 @@ addEmployeeButton.addEventListener("click", function (event) {
   // Reset the modal form so it's blank next time it opens
   document.getElementById("addEmployeeForm").reset();
 });
+
+
+
+const editButton = document.getElementById("editButton");
+
+editButton.addEventListener("click", function (event) {
+    event.preventDefault();
+  const employeeForm = document.getElementById("employeeForm");
+  const inputFields = employeeForm.querySelectorAll("input.form-control, select.form-select");
+
+  inputFields.forEach(function (field) {
+    field.disabled = !field.disabled;
+  });
+
+  if (editButton.textContent === "Edit") {
+    editButton.textContent = "Save";
+  } else {
+    editButton.textContent = "Edit";
+  }
+});
+
+ 
 
