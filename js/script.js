@@ -8,6 +8,8 @@
 // 5. How does JS get the data?
 // 6. How does JS display or use the data?
 
+// Add Employee Modal
+
 const addEmployeeModalEl = document.getElementById("addEmployeeModal");
 
 addEmployeeModalEl.addEventListener("hide.bs.modal", function () {
@@ -51,7 +53,7 @@ addEmployeeButton.addEventListener("click", function (event) {
   document.getElementById("addEmployeeForm").reset();
 });
 
-
+// Edit Employee Form
 
 const editButton = document.getElementById("editButton");
 
@@ -71,5 +73,22 @@ editButton.addEventListener("click", function (event) {
   }
 });
 
- 
+// Delete Employee
 
+deleteButton.addEventListener("click", function (event) {
+  event.preventDefault();
+  const userSaidYes = confirm("Are you sure you want to delete this employee?");
+
+  if (userSaidYes) {
+    const employeeForm = document.getElementById("employeeForm");
+    const inputFields = employeeForm.querySelectorAll("input.form-control, select.form-select");
+
+    inputFields.forEach(function (field) {
+      field.value = "";
+      field.disabled = true;
+    });
+
+    editButton.textContent = "Edit";
+    alert("Employee deleted successfully.");
+  }
+});
